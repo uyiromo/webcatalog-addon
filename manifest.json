@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Webcatalog Addon",
+    "version": "2025.7.28.0",
+    "description": "",
+    "icons": {
+        "48": "icon.png"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://webcatalog-free.circle.ms/*"
+    ],
+    "action": {
+        "default_icon": "icon.png",
+        "default_title": "Webcatalog Addon",
+        "default_popup": "options.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://webcatalog-free.circle.ms/CircleRapid/*"
+            ],
+            "js": [
+                "options.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "*.png",
+                "*.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
